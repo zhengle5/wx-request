@@ -1,0 +1,46 @@
+#spring.datasource.data-password=postgres
+#spring.datasource.data-username=postgres
+#spring.datasource.url=jdbc:postgresql://118.31.166.34:5432/postgres
+#spring.datasource.driverClassName=org.postgresql.Driver
+#server.port=8090
+
+#Created with IntelliJ IDEA.
+#User: Administrator
+#Date: 2020/3/23
+#Time: 1:20
+#To change this template use File | Settings | File Templates.
+#Description:
+#    druid连接池配置、服务端口、数据库配置
+
+
+
+
+#端口
+server:
+  port: 8090
+
+#数据库配置
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://118.31.166.34:5432/project_program
+    username: postgres
+    password: postgres
+    druid:
+      #初始化连接大小
+      initial-size: 8
+      #最小空闲连接数
+      min-idle: 5
+      #最大连接数
+      max-active: 10
+      #查询超时时间
+      query-timeout: 6000
+      #事务查询超时时间
+      transaction-query-timeout: 6000
+      #关闭空闲连接超时时间
+      remove-abandoned-timeout: 1800
+      filters: stat,config
+
+
+
